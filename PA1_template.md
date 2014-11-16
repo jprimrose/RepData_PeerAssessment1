@@ -4,8 +4,7 @@ James Primrose
 ### What is mean total number of steps taken per day?
 *  For this part of the assignment, you can ignore the missing values in the dataset.
 *  Make a histogram of the total number of steps taken each day
-*  Calculate and report the mean and median total number of steps taken per day
-* aggregate to get total steps per day
+*  Calculate and report the mean and median total number of steps taken per day / aggregate to get total steps per day
 
 Load the data
 
@@ -58,6 +57,9 @@ mtext(tout, 3,-.25,cex=.65)
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+
+The mean total steps per day is 10766.19
+The mediam total steps per day is 10765 
 
 Cleanup
 
@@ -118,6 +120,9 @@ mtext(paste("Max Avg Steps: \n",smax$interval,": ",round(smax$steps,d=2),sep="")
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
 
+The 08:35 interval, on average across all days, contains the most number of steps at 206.17 steps.
+
+
 Cleanup
 
 ```r
@@ -128,11 +133,11 @@ rm(avg.day,smax,smean)
 ### Imputing missing values
 * Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-1 - Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
-2 - Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
-3 - Create a new dataset that is equal to the original dataset but with the missing data filled in.
+* Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+* Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+* Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
-I still dont remember the data <sigh>
+Look at the data 
 
 ```r
 head(act)
@@ -177,7 +182,9 @@ Replace NA with zero (0)
 act2[is.na(act2)] <- 0
 ```
 
-Aggregate the steps per interval using the copy pasta strategy above
+My strategy to fill in the missing data is the use the mean of that interval. The goal is to get a feel for time of day activity level, this will smooth in the empty spaces with average data for that time interval. This doesn't address situations where all values are missing for an interval.
+
+Aggregate the average steps per interval.
 
 ```r
 avg.interval <- aggregate(steps ~ interval, data=act2,FUN=mean)
@@ -204,7 +211,7 @@ zer <- zer[c(3,2,1)]
 names(zer) <- c("steps", "date",  "interval")
 ```
 
-Rbind the final set
+Rbind the final set and display the new data set 
 
 ```r
 final.act <- rbind(nzer,zer)
