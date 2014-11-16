@@ -204,7 +204,7 @@ rm(per.day,b,h,old.par,s,sfit,smean,smed,tout,yfit)
 ```
 
 
-### Are there differences in activity patterns between weekdays and weekends?
+# Are there differences in activity patterns between weekdays and weekends?
 For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
 One more look at the data
