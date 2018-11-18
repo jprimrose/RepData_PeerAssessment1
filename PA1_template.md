@@ -1,6 +1,6 @@
 # PeerAssignment 1
 James Primrose  
-11/08/2014  
+11/08/2018  
 ### What is mean total number of steps taken per day?
 *  For this part of the assignment, you can ignore the missing values in the dataset.
 *  Make a histogram of the total number of steps taken each day
