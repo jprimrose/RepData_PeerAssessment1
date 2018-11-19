@@ -56,7 +56,7 @@ tout <- paste("Mean: ",round(smean,d=2),"\nMedian :",smed,sep="")
 mtext(tout, 3,-.25,cex=.65)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](./figure/unnamed-chunk-5-1.png) 
 
 The mean total steps per day is 10766.19
 The mediam total steps per day is 10765 
@@ -118,7 +118,7 @@ abline(v=smax$interval,col="red",lty=3,cex=1)
 mtext(paste("Max Avg Steps: \n",smax$interval,": ",round(smax$steps,d=2),sep=""), 3,-.15,cex=.65)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![](./figure/unnamed-chunk-11-1.png) 
 
 The 08:35 interval, on average across all days, contains the most number of steps at 206.17 steps.
 
@@ -261,7 +261,7 @@ tout <- paste("Mean: ",round(smean,d=2),"\nMedian :",smed,sep="")
 mtext(tout, 3,-.25,cex=.65)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-26-1.png) 
+![](./figure/unnamed-chunk-26-1.png) 
 
 Q. Do these values differ from the estimates from the first part of the assignment?
 
@@ -341,7 +341,7 @@ title(xlab = "Interval",
       outer = TRUE, line = 3)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-31-1.png) 
+![](./figure/unnamed-chunk-31-1.png) 
 
 Cleanup
 
